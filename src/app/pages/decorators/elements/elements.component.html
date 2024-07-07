@@ -1,0 +1,45 @@
+<h4>Learn Ng Template</h4>
+
+<ng-template #myTemplate>
+    <h3>This is template</h3>
+    <p>This is an example paragraph to understand ng-template</p>
+</ng-template>
+
+<!-- ngTemplateOutlet Directive -->
+ <!-- <div *ngTemplateOutlet="myTemplate"></div> -->
+  <ng-container *ngTemplateOutlet="myTemplate">
+
+  </ng-container>
+
+ <button class="btn btn-primary" *ngIf="show; else notifyMe">Buy Now</button>
+ <ng-template #notifyMe>
+    <button class="btn btn-primary">Notify</button>
+ </ng-template>
+
+
+ <ng-container *ngIf="toggle; else toggleOff">
+    <p>The toogle is on</p>
+ </ng-container>
+
+ <ng-template #toggleOff>
+    <p>The toogle is Off</p>
+ </ng-template>
+
+ <button (click)="onToggle()">Toggle</button>
+
+ <app-ng-content>
+    <!-- <h3>New Arrivals in Nike</h3> -->
+    <p #para>
+        This guide explains how to set up your environment for Angular development using the Angular CLI. It includes information about installing the CLI, creating an initial workspace and starter app, and running that app locally to verify your setup.
+     </p>
+    <p #para>
+        This guide explains how to set up your environment for Angular development using the Angular CLI. It includes information about installing the CLI, creating an initial workspace and starter app, and running that app locally to verify your setup.
+     </p>
+    <p #para>
+        This guide explains how to set up your environment for Angular development using the Angular CLI. It includes information about installing the CLI, creating an initial workspace and starter app, and running that app locally to verify your setup.
+     </p>
+    
+ </app-ng-content>
+
+
+ 

@@ -1,0 +1,15 @@
+
+<div class="container-fluid">
+<div class="row g-3">
+    <div class="col-md-12">
+        <app-search (searchTextChange)="setSearchText($event)"></app-search>
+    </div>
+    <div class="col-12">
+        <app-filter [all]="20" [instock]="30" [outstock]="5" (selectFilterRadioBtnChanged)="changeRadio($event)" [searchText] = 'searchText'></app-filter>
+    </div>
+    
+@for (item of product; track $index) {
+    <app-child  class="col-md-3" [prod]="item" (click)="selectProduct = item"></app-child>
+}
+</div>
+</div>
